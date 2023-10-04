@@ -24,8 +24,8 @@ public class Post {
     @Column(name = "metaTitle", nullable = true, length = 100)
     private String metaTitle;
     @Basic
-    @Column(name = "summary", nullable = true, length = -1)
-    private Object summary;
+    @Column(name = "summary", nullable = true)
+    private String summary;
     @Basic
     @Column(name = "published", nullable = false)
     private byte published;
@@ -82,11 +82,11 @@ public class Post {
         this.metaTitle = metaTitle;
     }
 
-    public Object getSummary() {
+    public String getSummary() {
         return summary;
     }
 
-    public void setSummary(Object summary) {
+    public void setSummary(String summary) {
         this.summary = summary;
     }
 

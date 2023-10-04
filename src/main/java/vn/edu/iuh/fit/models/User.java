@@ -36,8 +36,8 @@ public class User {
     @Column(name = "lastLogin", nullable = true)
     private Timestamp lastLogin;
     @Basic
-    @Column(name = "intro", nullable = true, length = -1)
-    private Object intro;
+    @Column(name = "intro", nullable = true)
+    private String intro;
     @Basic
     @Column(name = "profile", nullable = true, length = -1)
     private String profile;
@@ -114,11 +114,11 @@ public class User {
         this.lastLogin = lastLogin;
     }
 
-    public Object getIntro() {
+    public String getIntro() {
         return intro;
     }
 
-    public void setIntro(Object intro) {
+    public void setIntro(String intro) {
         this.intro = intro;
     }
 
