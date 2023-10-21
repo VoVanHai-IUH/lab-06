@@ -1,6 +1,6 @@
-package vn.edu.iuh.fit.services;
+package vn.edu.iuh.fit.backend.services;
 
-import vn.edu.iuh.fit.repositories.UserRepository;
+import vn.edu.iuh.fit.backend.repositories.UserRepository;
 
 public class UserServices {
     private UserRepository userRepository;

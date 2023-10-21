@@ -1,6 +1,6 @@
-package vn.edu.iuh.fit.services;
+package vn.edu.iuh.fit.backend.services;
 
-import vn.edu.iuh.fit.repositories.PostRepository;
+import vn.edu.iuh.fit.backend.repositories.PostRepository;
 
 public class PostServices {
     private PostRepository postRepository;
