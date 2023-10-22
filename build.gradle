@@ -37,6 +37,15 @@ dependencies {
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
 
+    //bcrypt
+    implementation 'at.favre.lib:bcrypt:0.10.2'
+
+    //generate random text
+    implementation 'org.thshsh:lorem-ipsum-generator:2.0.0'
+    //https://github.com/datafaker-net/datafaker/
+    implementation 'net.datafaker:datafaker:2.0.2'
+
+
     //auto-load
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
 

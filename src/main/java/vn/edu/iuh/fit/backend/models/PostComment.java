@@ -2,6 +2,7 @@ package vn.edu.iuh.fit.backend.models;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.Instant;
@@ -12,7 +13,8 @@ import java.util.Set;
 @Setter
 @Entity
 @Table(name = "post_comment")
-public class PostComment extends User {
+@NoArgsConstructor
+public class PostComment{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -42,11 +44,23 @@ public class PostComment extends User {
     @Column(name = "publishedAt")
     private Instant publishedAt;
 
-    @Lob //large object clob, blob
+    @Lob //large object {clob, blob}
     @Column(name = "content")
     private String content;
 
     @OneToMany(mappedBy = "parent")
     private Set<PostComment> postComments = new LinkedHashSet<>();
 
+
+    public PostComment(Post post, PostComment parent, String title, User user, Boolean published, Instant createdAt, Instant publishedAt, String content, Set<PostComment> postComments) {
+        this.post = post;
+        this.parent = parent;
+        this.title = title;
+        this.user = user;
+        this.published = published;
+        this.createdAt = createdAt;
+        this.publishedAt = publishedAt;
+        this.content = content;
+        this.postComments = postComments;
+    }
 }
