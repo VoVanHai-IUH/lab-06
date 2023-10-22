@@ -19,6 +19,7 @@ import vn.edu.iuh.fit.backend.repositories.UserRepository;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Random;
 
 @SpringBootApplication
@@ -40,7 +41,7 @@ public class LabWeek06Application {
     CommandLineRunner test() {
         return args -> {
 
-
+            Faker faker = new Faker(new Locale("vi","VN"));
 
             User user1 = new User("teo", "van", "nguyen",
                     "01=918 444 666", "teo@gmail.com",
@@ -64,7 +65,9 @@ public class LabWeek06Application {
                         LoremIpsum.createSentence(100)
                         , true,
                         Instant.now(), Instant.now(), Instant.now(),
-                        LoremIpsum.createParagraph(1500));
+                        //LoremIpsum.createParagraph(1500)
+                        faker.lorem().paragraphs(5).toString()
+                );
                 lst.add(p);
             }
             postRepository.saveAll(lst);
